@@ -1,3 +1,13 @@
+# Webpack presentation
+
+This repository contains sample code used for the webpack presentation [https://slides.com/acanimal/webpack](https://slides.com/acanimal/webpack).
+
+It is a short introduction to webpack, what benefits offers over a task runner and how to use it.
+
+
+
+---
+
 The MIT License (MIT)
 
 Copyright (c) 2015 Antonio Santiago (@acanimal)
