@@ -2,26 +2,38 @@
 
 var path = require("path");
 var Webpack = require("webpack");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 
 // Our configuration
 module.exports = {
-	
+
 	// Define the entry point
-	entry: path.resolve(__dirname, "js", "app.js"),
+	entry: {
+		app1: path.resolve(__dirname, "js", "app1.js"),
+		app2: path.resolve(__dirname, "js", "app2.js")
+	},
 
 	// Output configuration
 	output: {
 		path: path.resolve(__dirname, "assets"),
-		filename: "budle.js"
+		filename: "[name].js",
+		chunkFilename: "[id].js"
 	},
 
 	module: {
 		loaders: [
-			// Inform about CSS loaders so that it can be bundled too
-			{ test: /\.css$/, loader: "style-loader!css-loader" }
+			// Inform CSS modules must be bundled in another file.
+			{
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+      }
 		]
 	},
 
-	// Generate source map files
-	devtool: "source-map"
+	plugins: [
+		// Extract all CSS content to a file
+    new ExtractTextPlugin("[name].css")
+	]
+
 };

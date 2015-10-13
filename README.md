@@ -6,4 +6,6 @@ This repository contains sample code used for the  [webpack presentation](https:
 
 - Clone the repository.
 - Install dependencies with: `npm install`.
-- Go into desired examples and run webpack: `../node_modules/webpack/bin/webpack.js`.
+- Go into desired examples folder, for example: `cd 01-basic-example/`
+- Run webpack: `../node_modules/webpack/bin/webpack.js`.
+- Run HTTP server so you can see the example running in your browser: `../node_modules/http-server/bin/http-server`

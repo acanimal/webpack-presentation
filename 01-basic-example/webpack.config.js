@@ -5,14 +5,14 @@ var Webpack = require("webpack");
 
 // Our configuration
 module.exports = {
-	
+
 	// Define the entry point
 	entry: path.resolve(__dirname, "js", "app.js"),
 
 	// Output configuration
 	output: {
 		path: path.resolve(__dirname, "assets"),
-		filename: "budle.js"
+		filename: "bundle.js"
 	},
 
 	module: {
@@ -20,8 +20,6 @@ module.exports = {
 			// Inform about CSS loaders so that it can be bundled too
 			{ test: /\.css$/, loader: "style-loader!css-loader" }
 		]
-	},
-
-	// Generate source map files
-	devtool: "source-map"
+	}
+	
 };
